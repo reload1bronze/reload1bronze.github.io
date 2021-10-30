@@ -20,7 +20,8 @@ function deleteToDo(event) {
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   li.remove();
   saveToDos();
-  toDoForm.classList.remove("hidden");
+  question.classList.remove(HIDDEN_CLASSNAME);
+  answer.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function paintToDo(newTodo) {
@@ -33,6 +34,7 @@ function paintToDo(newTodo) {
   btn.style.backgroundColor = "transparent";
   btn.style.border = "none";
   btn.style.fontSize = "30px"
+  btn.style.cursor = "pointer"
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   btn.addEventListener("click", deleteToDo);
@@ -53,7 +55,8 @@ function handleToDoSubmit(event) {
   toDos.push(newTodoObj);
   paintToDo(newTodoObj);
   saveToDos();
-  toDoForm.classList.add("hidden");
+  question.classList.add(HIDDEN_CLASSNAME);
+  answer.classList.add(HIDDEN_CLASSNAME);
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
@@ -61,10 +64,12 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos && savedToDos.length > 2) {
-  toDoForm.classList.add("hidden");
+  qestion.classList.add(HIDDEN_CLASSNAME);
+  answer.classList.add(HIDDEN_CLASSNAME);
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos;
   toDos.forEach(paintToDo);
 } else {
-  toDoForm.classList.remove("hidden");
+  question.classList.remove(HIDDEN_CLASSNAME);
+  answer.classList.remove(HIDDEN_CLASSNAME);
 } 
