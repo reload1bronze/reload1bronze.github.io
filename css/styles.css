@@ -1,0 +1,104 @@
+@import "reset.css";
+
+.hidden {
+  display: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  align-items: center;
+  color: white;
+}
+
+#weather {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 10px;
+}
+
+#weather span {
+  margin-bottom: 8px;
+}
+
+.center-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-contents h1 {
+  font-size: 50px;
+}
+
+#clock {
+  font-size: 160px;
+  margin: 0px;
+  margin-bottom: 32px;
+}
+
+.todo-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login-form input {
+  font-size: 50px;
+  background: transparent;
+  border: none;
+  border-bottom: 5px solid white;
+  color: white;
+  text-align: center;
+}
+
+#login-form input::placeholder {
+  color: white;
+}
+
+#login-form input:focus {
+  outline: none;
+}
+
+#todo-form div {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+#todo-form input {
+  font-size: 30px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid white;
+  color: white;
+  text-align: center;
+}
+
+#todo-form input:focus {
+  outline: none;
+}
+
+.todo-contents ul {
+  font-size: 36px;
+}
+
+.todo-form__container {
+  display: flex;
+  flex-direction: column;
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#quote span {
+  margin-bottom: 12px;
+}
